@@ -1,9 +1,10 @@
 """Defaults urls for the Zinnia TinyMCE"""
-from django.conf.urls import include
-from django.conf.urls import url
+from django.conf.urls import include, url
+from django.views.generic.base import TemplateView
 
 
 urlpatterns = [
     url(r'^', include('zinnia_tinymce.urls.links')),
     url(r'^filebrowser/', include('zinnia_tinymce.urls.filebrowser')),
+    url(r'^tinymce_js/', TemplateView.as_view(template_name='admin/zinnia/entry/tinymce_textareas.js'), name='tinymce-js'),
 ]

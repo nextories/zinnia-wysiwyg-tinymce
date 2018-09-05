@@ -22,7 +22,7 @@ class EntryAdminTinyMCEMixin(object):
         media = super(EntryAdminTinyMCEMixin, self).media
 
         media += TinyMCE().media + Media(
-            js=[reverse('tinymce-js', args=['admin/zinnia/entry']),
+            js=[reverse('tinymce-js'),
                 reverse('tinymce-filebrowser-callback')]
         )
 
