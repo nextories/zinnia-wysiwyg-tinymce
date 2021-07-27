@@ -1,6 +1,6 @@
 """EntryAdmin for zinnia-tinymce"""
 from django.contrib import admin
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.forms import Media
 
 from tinymce.widgets import TinyMCE
