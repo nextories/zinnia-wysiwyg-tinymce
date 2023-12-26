@@ -1,7 +1,7 @@
 """
 URLs for filebrowser in TinyMCE
 """
-from django.conf.urls import url
+from django.urls import re_path
 from django.views.generic import View
 
 from zinnia_tinymce.views import FileBrowserCallBackView
@@ -10,16 +10,16 @@ from zinnia_tinymce.views import RemoveFileView
 
 
 urlpatterns = [
-    url(r'^$',
+    re_path(r'^$',
         View.as_view(),
         name='tinymce-filebrowser-dispatch'),
-    url(r'^callback.js$',
+    re_path(r'^callback.js$',
         FileBrowserCallBackView.as_view(),
         name='tinymce-filebrowser-callback'),
-    url(r'^(?P<file_type>\w+)/$',
+    re_path(r'^(?P<file_type>\w+)/$',
         FileBrowserView.as_view(),
         name='tinymce-filebrowser'),
-    url(r'^(?P<file_type>\w+)/remove/(?P<pk>\d+)/$',
+    re_path(r'^(?P<file_type>\w+)/remove/(?P<pk>\d+)/$',
         RemoveFileView.as_view(),
         name='tinymce-filebrowser-remove')
 ]
